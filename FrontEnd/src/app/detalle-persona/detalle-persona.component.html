@@ -1,0 +1,17 @@
+
+
+    <div class="container mt-5 d-flex justify-content-center ">
+      <div class="card" style="width: 18rem" *ngIf="persona">
+            <img src="https://us.123rf.com/450wm/nuwaba/nuwaba1707/nuwaba170700076/81763793-persona-usuario-icono-de-ilustraci%C3%B3n-de-amigo-vectror-aislado-sobre-fondo-gris.jpg" class="card-img-top" alt="..."/>
+            <div class="card-body text-center">
+                <h5 class="card-title">Información</h5>
+                <p class="card-text">
+                Nombre: {{ persona.nombres }} {{ persona.apellidos }}
+                </p>
+                <p class="card-text">Documento: {{ persona.documento }}</p>
+                <p class="card-text">Edad: {{ persona.edad }}</p>
+                <a routerLink="/lista-persona" class="btn btn-primary ">Atrás</a>
+            </div>
+        </div>
+    </div>
+
