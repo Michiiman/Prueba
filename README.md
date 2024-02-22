@@ -10,7 +10,7 @@ Para este proyecto el backend fue diseñado en laravel, el frontEnd en Angular y
 <br>                                
 Este fue el modelo de datos utilizado para traer la informacion:
 ![datospersonasphp](https://github.com/Michiiman/SmartDataPage/assets/68972889/0176c3e5-2e4d-42c8-a0c8-55f5ebc94604)
-**Datos Backend**
+
 <br>                                
 <br>
 <br>                                
