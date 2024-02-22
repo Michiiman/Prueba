@@ -2,7 +2,9 @@
 
 Para este proyecto el backend fue diseñado en laravel, el frontEnd en Angular y la base de datos utilizada fue MySQL.
 <br>                                
-<br>                                                            
+<br>
+<img src="![Info Base de datos](https://github.com/Michiiman/SmartDataPage/assets/68972889/02693a7c-ecc8-499a-bedc-750b499a1156)" width="600">
+
 ![Info Base de datos](https://github.com/Michiiman/SmartDataPage/assets/68972889/02693a7c-ecc8-499a-bedc-750b499a1156)
 <center>**Informacion almacenada en la base de datos**</center>
 <br> 
