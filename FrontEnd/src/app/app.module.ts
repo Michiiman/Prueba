@@ -4,13 +4,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetallePersonaComponent } from './detalle-persona/detalle-persona.component';
 import { ListaPersonaComponent } from './lista-persona/lista-persona.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DetallePersonaComponent,
-    ListaPersonaComponent
+    ListaPersonaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
