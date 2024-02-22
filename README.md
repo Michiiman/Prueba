@@ -15,7 +15,6 @@ Este fue el modelo de datos utilizado para traer la informacion:
 <br>
 <br>                                
 Al correr el proyecto, el home tiene un boton que nos envia a la pagina que consume la primera api: 
-<br>
 ![HomePage](https://github.com/Michiiman/SmartDataPage/assets/68972889/f6aac276-cf3f-4697-bd7a-7ae33afea99a)
 
 **Home page**                                         
