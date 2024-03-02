@@ -1,0 +1,19 @@
+<div class="container mt-5 ">
+    <h1 class="fs-2 d-flex justify-content-center bg-primary text-white ">Listado de Etiquetas</h1>
+    <select class="form-select mb-5" aria-label="Default select example" name="etiquetas" (change)="tagSelected($event)">
+        <option selected>Seleccione una etiqueta</option>
+        <option *ngFor="let tag of tagsResponse" [value]="tag.tag_id">{{tag.tag_id}}-{{tag.nombre}}</option>
+    </select>
+    
+    <div class="row">
+        <div class="col-12">
+            <ul id="tagsContainer" class="ms-3 me-4">
+            </ul>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <a  class="btn btn-success me-3">Validar</a>
+            <a  class="btn btn-warning ">Limpiar</a>
+        </div>
+    </div>
+    
+</div>

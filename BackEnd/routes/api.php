@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\TagsAssociationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,8 @@ use App\Http\Controllers\PersonaController;
 
 Route::get('/personas', [PersonaController::class, 'index']);
 Route::get('/personas/{id}', [PersonaController::class, 'show']);
+Route::get('/level', [TagsAssociationController::class, 'getLevel']);
+Route::get('/newlevel', [TagsAssociationController::class, 'validateTag']);
 Route::post('/personas', [PersonaController::class, 'create']);
+
 

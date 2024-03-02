@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { DetallePersonaComponent } from './detalle-persona/detalle-persona.component';
 import { ListaPersonaComponent } from './lista-persona/lista-persona.component';
 import { HomeComponent } from './home/home.component';
+import { ListaTagsComponent } from './lista-tags/lista-tags.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     DetallePersonaComponent,
     ListaPersonaComponent,
-    HomeComponent
+    HomeComponent,
+    ListaTagsComponent
   ],
   imports: [
     BrowserModule,

@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Persona extends Model
+class Tags_association extends Model
 {
     use HasFactory;
-    protected $table = "Persona";
-    protected $fillable = ['nombres','apellidos','documento','edad'];
+    protected $table = "tags_association";
+    protected $fillable = ['id','ids_tags'];
 }

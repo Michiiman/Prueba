@@ -17,7 +17,6 @@ export class DetallePersonaComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')||'';
     this.obtenerPersona(id);
-
   }
 
   async obtenerPersona(id:string){
