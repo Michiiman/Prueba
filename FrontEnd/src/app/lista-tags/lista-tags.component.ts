@@ -59,6 +59,7 @@ export class ListaTagsComponent implements OnInit {
       tagContainer.appendChild(listItem);
     }
 
+
     return validator;
   }
 
@@ -67,7 +68,10 @@ export class ListaTagsComponent implements OnInit {
     if (data) {
         data.innerHTML = "";
         this.tagsResult=[];
+        let levelReset=1
+        this.tagsService.apiUrl = 'http://127.0.0.1:8000/api/level?level='+ levelReset
         this.getTags();
+
     }
 
 }
