@@ -20,7 +20,7 @@ use App\Http\Controllers\TagsAssociationController;
 Route::get('/personas', [PersonaController::class, 'index']);
 Route::get('/personas/{id}', [PersonaController::class, 'show']);
 Route::get('/level', [TagsAssociationController::class, 'getLevel']);
-Route::get('/newlevel', [TagsAssociationController::class, 'validateTag']);
+Route::get('/validate', [TagsAssociationController::class, 'validateTag']);
 Route::post('/personas', [PersonaController::class, 'create']);
 
 

@@ -9,9 +9,19 @@ export class TagsService {
 
   constructor() { }
 
-  GetTagsLevel = async () => {
+  getTagsLevel = async () => {
     try {
       const response = await fetch(this.apiUrl)
+      const data = await response.json();
+      return data
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  validateTags = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/validate')
       const data = await response.json();
       return data
     } catch (error) {

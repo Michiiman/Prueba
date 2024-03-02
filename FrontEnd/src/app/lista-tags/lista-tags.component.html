@@ -11,8 +11,14 @@
             </ul>
         </div>
         <div class="container d-flex justify-content-center">
-            <a  class="btn btn-success me-3">Validar</a>
-            <a  class="btn btn-warning ">Limpiar</a>
+            <a  (click)= "validate()" class="btn btn-success me-3">Validar</a>
+            <a  (click)= "clean()" class="btn btn-warning ">Limpiar</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <ul id="validatedTags" class="ms-3 me-4">
+            </ul>
         </div>
     </div>
     
