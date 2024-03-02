@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TagsService } from '../servicios/tags.service';
 import { Router } from '@angular/router';
+import { Console } from 'console';
 
 
 @Component({
@@ -12,6 +13,7 @@ export class ListaTagsComponent implements OnInit {
 
   public tagsResponse: any[] = [];
   public tagsResult: any[] = [];
+  public tagsReady: any[] = [];
 
   constructor(private tagsService: TagsService,
     private router: Router) { }
@@ -44,24 +46,40 @@ export class ListaTagsComponent implements OnInit {
   async validate() {
     const data = await this.tagsService.validateTags();
     this.tagsResponse = [...data];
-    let validator = false;
-    let info = data.forEach((element: any) => {
-      if (element.ids_tags == this.tagsResult.join()) {
-        validator = true;
-        alert("El tag si existe");
-      }
-    });
+    let existentTag = this.tagsReady.find(tag => JSON.stringify(tag) === JSON.stringify(this.tagsResult));
+    console.log(this.tagsReady)
+    if (this.tagsReady.length == 0 ) {
+        this.tagsReady.push(this.tagsResult);
+    }else if(existentTag==undefined){
+      this.tagsReady.push(this.tagsResult);
+    }else{
+      alert('Ya existe esta combinación.');
+      return;
+    }
+    
+    console.log(this.tagsReady);
+    
 
-    let tagContainer = document.querySelector('#validatedTags');
-    if (tagContainer) {
-      let listItem = document.createElement('li');
-      listItem.textContent = this.tagsResult.join()+' '+'Si existe la combinacion';
-      tagContainer.appendChild(listItem);
+    let info = data.find((tag:any) => tag.ids_tags === this.tagsResult.join());
+
+    let validator = false;
+
+    if (info) {
+        validator = true;
+        let tagContainer = document.querySelector('#validatedTags');
+        if (tagContainer) {
+            let listItem = document.createElement('li');
+            listItem.textContent = `${this.tagsResult.join()} - Sí existe la combinación`;
+            tagContainer.appendChild(listItem);
+        }
+    } else {
+        alert('La combinación de etiquetas no existe o está incompleta');
+        this.tagsReady.pop();
     }
 
-
     return validator;
-  }
+}
+
 
   clean() {
     const data = document.querySelector('#tagsContainer');
