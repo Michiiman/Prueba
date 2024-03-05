@@ -30,7 +30,6 @@ export class ListaTagsComponent implements OnInit {
   tagSelected(event: any): void {
     const selectedValue = event.target.value;
     const selectedText = event.target.options[event.target.selectedIndex].text;
-
     this.tagsResult.push(selectedValue);
     let tagContainer = document.querySelector('#tagsContainer');
     if (tagContainer) {
@@ -38,8 +37,9 @@ export class ListaTagsComponent implements OnInit {
       listItem.textContent = selectedText;
       tagContainer.appendChild(listItem);
     }
+
     let nextLevel = this.tagsResult.length + 1;
-    this.tagsService.apiUrl = 'http://127.0.0.1:8000/api/level?level=' + nextLevel + '&lastTag=' + selectedValue
+    this.tagsService.apiUrl = 'http://127.0.0.1:8000/api/level?level=' + nextLevel + '&lastTag=' + this.tagsResult
     this.getTags();
   }
 
@@ -47,7 +47,7 @@ export class ListaTagsComponent implements OnInit {
     const data = await this.tagsService.validateTags();
     this.tagsResponse = [...data];
     let existentTag = this.tagsReady.find(tag => JSON.stringify(tag) === JSON.stringify(this.tagsResult));
-    console.log(this.tagsReady)
+    
     if (this.tagsReady.length == 0 ) {
         this.tagsReady.push(this.tagsResult);
     }else if(existentTag==undefined){
@@ -57,7 +57,6 @@ export class ListaTagsComponent implements OnInit {
       return;
     }
     
-    console.log(this.tagsReady);
     
 
     let info = data.find((tag:any) => tag.ids_tags === this.tagsResult.join());

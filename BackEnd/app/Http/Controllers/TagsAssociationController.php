@@ -17,7 +17,7 @@ class TagsAssociationController extends Controller
     {
         $this->currentLevel = $request->query('level');
         $this->lastTagSelect = $request->query('lastTag');
-
+        
         $tags_association = Tags_association::query();
 
         $tags_association->leftJoin('tags', function ($join) {
@@ -25,7 +25,7 @@ class TagsAssociationController extends Controller
         });
 
         if ($this->lastTagSelect != '') {
-            $tags_association->whereRaw("SUBSTRING_INDEX(SUBSTRING_INDEX(tags_association.ids_tags, ',', {$this->currentLevel}-1), ',', -1) = '{$this->lastTagSelect}'");
+            $tags_association->whereRaw("SUBSTRING_INDEX(SUBSTRING_INDEX(tags_association.ids_tags, ',', {$this->currentLevel}-1), ',', {$this->currentLevel}) = '{$this->lastTagSelect}'");
         }
 
         $tags_association->select(\DB::raw("SUBSTRING_INDEX(SUBSTRING_INDEX(tags_association.ids_tags, ',', {$this->currentLevel}), ',', -1) as tag_id"), 'tags.nombre');
